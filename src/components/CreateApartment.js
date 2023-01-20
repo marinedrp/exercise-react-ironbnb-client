@@ -15,6 +15,7 @@ export function CreateApartment() {
 
     const body = { img, pricePerDay, title };
 
+    
     axios
       .post(process.env.REACT_APP_API_URL, body)
       .then(() => {

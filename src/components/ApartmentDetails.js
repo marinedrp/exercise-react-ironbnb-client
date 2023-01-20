@@ -1,17 +1,13 @@
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { currencyFormatter } from "../utils";
 
 export function ApartmentDetails({ apartmentsList }) {
   const { apartmentId } = useParams();
-  const navigate = useNavigate();
 
   const details = apartmentsList.find((apartmentDetails) => {
     return apartmentDetails._id == apartmentId;
   });
-
-  console.log("Details from this apartment: ", details);
 
   return (
     <div>
