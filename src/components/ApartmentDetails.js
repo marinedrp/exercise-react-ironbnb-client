@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { Container } from "react-bootstrap";
+import { currencyFormatter } from "../utils";
 
 export function ApartmentDetails({ apartmentsList }) {
   const { apartmentId } = useParams();
@@ -18,7 +19,7 @@ export function ApartmentDetails({ apartmentsList }) {
       <Container>
         <img src={details.img}></img>
         <h2>{details.title}</h2>
-        <h2>Price per day: {details.pricePerDay}</h2>
+        <h2>Price per day: {currencyFormatter.format(details.pricePerDay)}</h2>
       </Container>
     </div>
   );

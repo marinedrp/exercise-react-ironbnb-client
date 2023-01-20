@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 
 export function CreateApartment() {
   const [title, setTitle] = useState("");
@@ -30,42 +31,39 @@ export function CreateApartment() {
   return (
     <div>
       <h1>Create new apartment</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input
+      <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3">
+        <Form.Label>Name</Form.Label>
+        <Form.Control
           type="text"
           name="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
 
-        <br />
-        <br />
 
-        <label>Price per day</label>
-        <input
+        <Form.Label>Price per day</Form.Label>
+        <Form.Control
           type="number"
           name="pricePerDay"
           value={pricePerDay}
           onChange={(e) => setPricePerDay(e.target.value)}
         />
 
-        <br />
-        <br />
 
-        <label>Image</label>
-        <input
+        <Form.Label>Image</Form.Label>
+        <Form.Control
           type="text"
           name="img"
           value={img}
           onChange={(e) => setImg(e.target.value)}
         />
 
-        <br />
-        <br />
 
-        <button type="submit">Create</button>
-      </form>
+
+        </Form.Group>
+        <Button variant="secondary" type="submit">Create</Button>
+      </Form>
     </div>
   );
 }
